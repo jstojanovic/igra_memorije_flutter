@@ -30,7 +30,7 @@ class Game {
     final Random random = Random();
     IconData icon;
     do {
-      icon = cardIcons[random.nextInt(cardIcons.length)];
+      icon = ikoneZaIgracuKartu[random.nextInt(ikoneZaIgracuKartu.length)];
     } while (icons.contains(icon));
     return icon;
   }
@@ -61,7 +61,7 @@ class Game {
         2,
         (index) => CardItem(
               cardValue,
-              CardState.hidden,
+              StanjeIgraceKarte.hidden,
               icon,
               cardColor,
             ));
@@ -69,8 +69,9 @@ class Game {
 
   void onCardPressed(int index) {
     final CardItem selectedCard = cards[index];
-    if (selectedCard.state == CardState.hidden && visibleCardCount < 2) {
-      selectedCard.state = CardState.visible;
+    if (selectedCard.state == StanjeIgraceKarte.hidden &&
+        visibleCardCount < 2) {
+      selectedCard.state = StanjeIgraceKarte.visible;
       visibleCardCount++;
 
       final List<int> visibleCardIndexes = _getVisibleCardIndexes();
@@ -79,14 +80,14 @@ class Game {
         final CardItem card2 = cards[visibleCardIndexes[1]];
 
         if (card1.value == card2.value) {
-          card1.state = CardState.guessed;
-          card2.state = CardState.guessed;
+          card1.state = StanjeIgraceKarte.guessed;
+          card2.state = StanjeIgraceKarte.guessed;
           visibleCardCount -= 2; // Decrease the visible card count
           isGameOver = _isGameOver();
         } else {
           Future.delayed(const Duration(milliseconds: 800), () {
-            card1.state = CardState.hidden;
-            card2.state = CardState.hidden;
+            card1.state = StanjeIgraceKarte.hidden;
+            card2.state = StanjeIgraceKarte.hidden;
             visibleCardCount -= 2; // Decrease the visible card count
           });
         }
@@ -98,12 +99,12 @@ class Game {
     return cards
         .asMap()
         .entries
-        .where((entry) => entry.value.state == CardState.visible)
+        .where((entry) => entry.value.state == StanjeIgraceKarte.visible)
         .map((entry) => entry.key)
         .toList();
   }
 
   bool _isGameOver() {
-    return cards.every((card) => card.state == CardState.guessed);
+    return cards.every((card) => card.state == StanjeIgraceKarte.guessed);
   }
 }

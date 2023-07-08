@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-enum CardState { hidden, visible, guessed }
+enum StanjeIgraceKarte { hidden, visible, guessed }
 
 class CardItem {
   final int value;
-  CardState state = CardState.hidden;
+  StanjeIgraceKarte state = StanjeIgraceKarte.hidden;
   IconData icon;
   Color color;
   CardItem(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class GameOptionsButton extends StatelessWidget {
-  const GameOptionsButton({
+class GumbeOdabiraTezine extends StatelessWidget {
+  const GumbeOdabiraTezine({
     required this.title,
     required this.onPressed,
     required this.color,

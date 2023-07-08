@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:igra_memorije/widgets/postavke_igre.dart';
 
-class StartUpPage extends StatelessWidget {
-  const StartUpPage({super.key});
+class PocetnaStranica extends StatelessWidget {
+  const PocetnaStranica({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +14,13 @@ class StartUpPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "MEMORY",
+                  "IGRA MEMORIJE!",
                   style: TextStyle(
                       fontSize: 35,
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
                 ),
-                GameOptions(),
+                PostavkeIgre(),
               ]),
         ),
       ),

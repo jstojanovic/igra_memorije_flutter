@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:igra_memorije/modeli/objekt_karta.dart';
 
-class MemoryCard extends StatelessWidget {
+class IgrackaKarta extends StatelessWidget {
   final CardItem card;
   final Function(int) onCardPressed;
   final int index;
 
-  const MemoryCard({
+  const IgrackaKarta({
     Key? key,
     required this.card,
     required this.index,
@@ -14,7 +14,7 @@ class MemoryCard extends StatelessWidget {
   }) : super(key: key);
 
   void handleCardTap() {
-    if (card.state == CardState.hidden) {
+    if (card.state == StanjeIgraceKarte.hidden) {
       onCardPressed(index);
     }
   }
@@ -29,12 +29,12 @@ class MemoryCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(0),
         ),
-        color:
-            card.state == CardState.visible || card.state == CardState.guessed
-                ? card.color
-                : Colors.grey,
+        color: card.state == StanjeIgraceKarte.visible ||
+                card.state == StanjeIgraceKarte.guessed
+            ? card.color
+            : Colors.grey,
         child: Center(
-          child: card.state == CardState.hidden
+          child: card.state == StanjeIgraceKarte.hidden
               ? null
               : SizedBox.expand(
                   child: FittedBox(

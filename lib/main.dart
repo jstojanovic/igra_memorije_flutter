@@ -3,6 +3,6 @@ import 'package:igra_memorije/igra_memorije.dart';
 
 void main() {
   runApp(
-    const MemoryGame(),
+    const IgraMemorije(),
   );
 }

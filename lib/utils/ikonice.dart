@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const List<IconData> cardIcons = <IconData>[
+const List<IconData> ikoneZaIgracuKartu = <IconData>[
   Icons.celebration,
   Icons.directions_car_filled,
   Icons.directions_bike,

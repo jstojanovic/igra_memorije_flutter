@@ -3,31 +3,31 @@ import 'package:igra_memorije/stranice/igračka_stranica.dart';
 import 'package:igra_memorije/widgets/gumbe_odabira_težine.dart';
 import 'package:igra_memorije/utils/leveli.dart';
 
-class GameOptions extends StatefulWidget {
-  const GameOptions({Key? key}) : super(key: key);
+class PostavkeIgre extends StatefulWidget {
+  const PostavkeIgre({Key? key}) : super(key: key);
 
   static Route<dynamic> _routeBuilder(BuildContext context, int gameLevel) {
     return MaterialPageRoute(
       builder: (_) {
-        return MemoryPage(gameLevel: gameLevel);
+        return IgrackaStranica(gameLevel: gameLevel);
       },
     );
   }
 
   @override
-  State<GameOptions> createState() => _GameOptionsState();
+  State<PostavkeIgre> createState() => _PostavkeIgreState();
 }
 
-class _GameOptionsState extends State<GameOptions> {
+class _PostavkeIgreState extends State<PostavkeIgre> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: gameLevels.map((level) {
+      children: tezineIgre.map((level) {
         return Padding(
           padding: const EdgeInsets.all(10.0),
-          child: GameOptionsButton(
+          child: GumbeOdabiraTezine(
             onPressed: () => Navigator.of(context).pushAndRemoveUntil(
-                GameOptions._routeBuilder(context, level['level']),
+                PostavkeIgre._routeBuilder(context, level['level']),
                 (Route<dynamic> route) => false),
             title: level['title'],
             color: level['color']![700]!,

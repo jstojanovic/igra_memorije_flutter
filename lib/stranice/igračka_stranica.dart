@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:igra_memorije/widgets/igračka_ploča.dart';
 
-class MemoryPage extends StatelessWidget {
-  const MemoryPage({
+class IgrackaStranica extends StatelessWidget {
+  const IgrackaStranica({
     required this.gameLevel,
     super.key,
   });
@@ -12,7 +12,7 @@ class MemoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: MemoryBoard(
+          child: IgrackaPloca(
         gameLevel: gameLevel,
       )),
     );

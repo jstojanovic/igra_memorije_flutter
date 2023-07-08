@@ -5,8 +5,8 @@ import 'package:igra_memorije/widgets/igračka_karta.dart';
 import 'package:igra_memorije/stranice/početna_stranica.dart';
 import 'package:igra_memorije/widgets/gumbe_odabira_težine.dart';
 
-class MemoryBoard extends StatefulWidget {
-  const MemoryBoard({
+class IgrackaPloca extends StatefulWidget {
+  const IgrackaPloca({
     required this.gameLevel,
     super.key,
   });
@@ -14,10 +14,10 @@ class MemoryBoard extends StatefulWidget {
   final int gameLevel;
 
   @override
-  State<MemoryBoard> createState() => _MemoryBoardState();
+  State<IgrackaPloca> createState() => _IgrackaPlocaState();
 }
 
-class _MemoryBoardState extends State<MemoryBoard> {
+class _IgrackaPlocaState extends State<IgrackaPloca> {
   late Timer timer;
   late Game game;
 
@@ -58,7 +58,7 @@ class _MemoryBoardState extends State<MemoryBoard> {
                   crossAxisCount: game.gridSize,
                   childAspectRatio: aspectRatio * 2,
                   children: List.generate(game.cards.length, (index) {
-                    return MemoryCard(
+                    return IgrackaKarta(
                       index: index,
                       card: game.cards[index],
                       onCardPressed: game.onCardPressed,
@@ -66,11 +66,11 @@ class _MemoryBoardState extends State<MemoryBoard> {
                   }),
                 ),
               ),
-              GameOptionsButton(
+              GumbeOdabiraTezine(
                 onPressed: () {
                   Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(builder: (BuildContext context) {
-                    return const StartUpPage();
+                    return const PocetnaStranica();
                   }), (Route<dynamic> route) => false);
                 },
                 title: 'QUIT',
