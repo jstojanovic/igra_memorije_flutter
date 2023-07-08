@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:igra_memorije/modeli/objekt_karta.dart';
 
 class IgrackaKarta extends StatelessWidget {
-  final CardItem card;
+  final ObjektKarta card;
   final Function(int) onCardPressed;
   final int index;
 

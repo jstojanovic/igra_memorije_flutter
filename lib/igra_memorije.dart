@@ -10,7 +10,7 @@ class IgraMemorije extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: const PocetnaStranica(),
-      title: 'Memory',
+      title: 'Igra memorije',
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
     );

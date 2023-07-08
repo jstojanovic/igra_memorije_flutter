@@ -6,10 +6,10 @@ import 'package:igra_memorije/utilsi/leveli.dart';
 class PostavkeIgre extends StatefulWidget {
   const PostavkeIgre({Key? key}) : super(key: key);
 
-  static Route<dynamic> _routeBuilder(BuildContext context, int gameLevel) {
+  static Route<dynamic> _routeBuilder(BuildContext context, int tezinaIgre) {
     return MaterialPageRoute(
       builder: (_) {
-        return IgrackaStranica(gameLevel: gameLevel);
+        return IgrackaStranica(tezinaIgre: tezinaIgre);
       },
     );
   }
@@ -22,7 +22,7 @@ class _PostavkeIgreState extends State<PostavkeIgre> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: tezineIgre.map((level) {
+      children: tezinaIgre.map((level) {
         return Padding(
           padding: const EdgeInsets.all(10.0),
           child: GumbeOdabiraTezine(

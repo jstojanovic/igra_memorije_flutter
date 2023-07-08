@@ -7,11 +7,11 @@ import 'package:igra_memorije/widgeti/gumbe_odabira_te%C5%BEine.dart';
 
 class IgrackaPloca extends StatefulWidget {
   const IgrackaPloca({
-    required this.gameLevel,
+    required this.tezinaIgre,
     super.key,
   });
 
-  final int gameLevel;
+  final int tezinaIgre;
 
   @override
   State<IgrackaPloca> createState() => _IgrackaPlocaState();
@@ -19,12 +19,12 @@ class IgrackaPloca extends StatefulWidget {
 
 class _IgrackaPlocaState extends State<IgrackaPloca> {
   late Timer timer;
-  late Game game;
+  late Igra igra;
 
   @override
   void initState() {
     super.initState();
-    game = Game(widget.gameLevel);
+    igra = Igra(widget.tezinaIgre);
     startTimer();
   }
 
@@ -55,13 +55,13 @@ class _IgrackaPlocaState extends State<IgrackaPloca> {
               ),
               Expanded(
                 child: GridView.count(
-                  crossAxisCount: game.gridSize,
+                  crossAxisCount: igra.gridSize,
                   childAspectRatio: aspectRatio * 2,
-                  children: List.generate(game.cards.length, (index) {
+                  children: List.generate(igra.cards.length, (index) {
                     return IgrackaKarta(
                       index: index,
-                      card: game.cards[index],
-                      onCardPressed: game.onCardPressed,
+                      card: igra.cards[index],
+                      onCardPressed: igra.onCardPressed,
                     );
                   }),
                 ),

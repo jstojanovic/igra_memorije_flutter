@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:igra_memorije/modeli/objekt_karta.dart';
 import 'package:igra_memorije/utilsi/ikonice.dart';
 
-class Game {
+class Igra {
   int gridSize;
-  List<CardItem> cards = [];
+  List<ObjektKarta> cards = [];
   bool isGameOver = false;
   int visibleCardCount = 0; // Track the number of visible cards
 
   Set<IconData> icons = {};
 
-  Game(this.gridSize) {
+  Igra(this.gridSize) {
     generateCards();
   }
 
@@ -43,7 +43,7 @@ class Game {
       final cardValue = i + 1;
       final IconData icon = icons.elementAt(i);
       final Color cardColor = cardColors[i % cardColors.length];
-      final List<CardItem> newCards =
+      final List<ObjektKarta> newCards =
           _createCardItems(icon, cardColor, cardValue);
       cards.addAll(newCards);
     }
@@ -55,11 +55,11 @@ class Game {
     isGameOver = false;
   }
 
-  List<CardItem> _createCardItems(
+  List<ObjektKarta> _createCardItems(
       IconData icon, Color cardColor, int cardValue) {
     return List.generate(
         2,
-        (index) => CardItem(
+        (index) => ObjektKarta(
               cardValue,
               StanjeIgraceKarte.hidden,
               icon,
@@ -68,7 +68,7 @@ class Game {
   }
 
   void onCardPressed(int index) {
-    final CardItem selectedCard = cards[index];
+    final ObjektKarta selectedCard = cards[index];
     if (selectedCard.state == StanjeIgraceKarte.hidden &&
         visibleCardCount < 2) {
       selectedCard.state = StanjeIgraceKarte.visible;
@@ -76,8 +76,8 @@ class Game {
 
       final List<int> visibleCardIndexes = _getVisibleCardIndexes();
       if (visibleCardIndexes.length == 2) {
-        final CardItem card1 = cards[visibleCardIndexes[0]];
-        final CardItem card2 = cards[visibleCardIndexes[1]];
+        final ObjektKarta card1 = cards[visibleCardIndexes[0]];
+        final ObjektKarta card2 = cards[visibleCardIndexes[1]];
 
         if (card1.value == card2.value) {
           card1.state = StanjeIgraceKarte.guessed;
