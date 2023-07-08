@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:igra_memorije/modeli/igra.dart';
-import 'package:igra_memorije/widgets/igračka_karta.dart';
+import 'package:igra_memorije/widgeti/igra%C4%8Dka_karta.dart';
 import 'package:igra_memorije/stranice/početna_stranica.dart';
-import 'package:igra_memorije/widgets/gumbe_odabira_težine.dart';
+import 'package:igra_memorije/widgeti/gumbe_odabira_te%C5%BEine.dart';
 
 class IgrackaPloca extends StatefulWidget {
   const IgrackaPloca({

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:igra_memorije/widgets/igračka_ploča.dart';
+import 'package:igra_memorije/widgeti/igra%C4%8Dka_plo%C4%8Da.dart';
 
 class IgrackaStranica extends StatelessWidget {
   const IgrackaStranica({

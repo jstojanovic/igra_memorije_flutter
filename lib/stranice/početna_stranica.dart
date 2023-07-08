@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:igra_memorije/widgets/postavke_igre.dart';
+import 'package:igra_memorije/widgeti/postavke_igre.dart';
 
 class PocetnaStranica extends StatelessWidget {
   const PocetnaStranica({super.key});

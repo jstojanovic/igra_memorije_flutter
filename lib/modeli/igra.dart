@@ -3,7 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:igra_memorije/modeli/objekt_karta.dart';
-import 'package:igra_memorije/utils/ikonice.dart';
+import 'package:igra_memorije/utilsi/ikonice.dart';
 
 class Game {
   int gridSize;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:igra_memorije/stranice/igračka_stranica.dart';
-import 'package:igra_memorije/widgets/gumbe_odabira_težine.dart';
-import 'package:igra_memorije/utils/leveli.dart';
+import 'package:igra_memorije/widgeti/gumbe_odabira_te%C5%BEine.dart';
+import 'package:igra_memorije/utilsi/leveli.dart';
 
 class PostavkeIgre extends StatefulWidget {
   const PostavkeIgre({Key? key}) : super(key: key);
